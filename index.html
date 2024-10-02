@@ -9,8 +9,9 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://th.bing.com/th/id/OIP.mS4wb1u1teYPBkJ0nHHtpwHaJ3?pid=ImgDet&w=104.74137931034483&h=180&c=7&dpr=1.3') no-repeat center center fixed;
+            background: url('https://th.bing.com/th/id/OIP.mS4wb1u1teYPBkJ0nHHtpwHaJ3?pid=ImgDet&w=104.74137931034483&h=180&c=7&dpr=1.3') repeat;
             background-size: cover;
+            filter: blur(100%); /* Increased blur effect */
             margin: 0;
             display: flex;
             justify-content: center;
@@ -25,6 +26,8 @@
             width: 100%;
             max-width: 1200px;
             padding: 20px;
+            position: relative; /* Added for positioning of LinkedIn badge */
+            z-index: 1; /* Ensures content is above the blurred background */
         }
 
         .left-column {
@@ -49,6 +52,7 @@
             padding: 20px;
             box-shadow: none;
             border: none;
+            margin-bottom: 20px; /* Added space between the badge and other cards */
         }
 
         .webflow-card {
@@ -60,7 +64,7 @@
         }
 
         .instagram-card iframe {
-            height: 600px;
+            height: 400px; /* Adjusted height for better balance */
             border: none;
         }
 
@@ -100,6 +104,7 @@
 
             .large-card {
                 order: 2;
+                max-height: 400px; /* Adjusted for mobile */
             }
 
             .linkedin-card, .instagram-card {
@@ -107,7 +112,7 @@
             }
 
             .instagram-card iframe {
-                height: 800px;
+                height: 400px; /* Reduced height for mobile */
             }
         }
 
@@ -121,7 +126,14 @@
 </head>
 <body>
     <div class="container">
-        <!-- Left Column (LinkedIn, Webflow, Instagram) -->
+        <!-- LinkedIn Badge -->
+        <div class="linkedin-card">
+            <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="ajcasugod" data-version="v1">
+                <a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
+            </div>
+        </div>
+
+        <!-- Left Column (Webflow, Instagram) -->
         <div class="left-column">
             <!-- Webflow Link -->
             <div class="card webflow-card">
