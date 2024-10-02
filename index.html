@@ -5,15 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ's Links</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #f4f4f9, #e0e0e0);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
         }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -22,11 +33,13 @@
             max-width: 1200px;
             padding: 20px;
         }
+
         .left-column {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
+
         .card {
             background-color: white;
             border-radius: 10px;
@@ -35,6 +48,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
+
         .linkedin-card {
             display: flex;
             justify-content: center;
@@ -43,6 +57,7 @@
             box-shadow: none;
             border: none;
         }
+
         .webflow-card {
             display: flex;
             flex-direction: column;
@@ -50,49 +65,59 @@
             align-items: center;
             padding: 20px;
         }
+
         .instagram-card iframe {
             height: 600px;
             border: none;
         }
+
         .large-card iframe {
             width: 100%;
             height: 100%;
             border: none;
         }
+
         .card h3 {
             margin: 0;
             padding: 20px 0;
             background-color: #f4f4f9;
             border-bottom: 1px solid #ddd;
         }
+
         a {
             display: block;
             padding: 15px;
             background-color: #808080;
             color: white;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 5px;
             margin-top: 10px;
         }
+
         a:hover {
             background-color: #606060;
         }
+
         /* Mobile View */
         @media (max-width: 768px) {
             .container {
                 display: flex;
                 flex-direction: column;
             }
+
             .large-card {
                 order: 2;
             }
+
             .linkedin-card, .instagram-card {
                 height: auto;
             }
+
             .instagram-card iframe {
                 height: 800px;
             }
         }
+
         /* Desktop View */
         .large-card {
             grid-column: 2;
@@ -105,17 +130,9 @@
     <div class="container">
         <!-- Left Column (LinkedIn, Webflow, Instagram) -->
         <div class="left-column">
-            <!-- LinkedIn Profile Badge -->
-            <div class="linkedin-card">
-                <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="ajcasugod" data-version="v1">
-                    <a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
-                </div>
-                <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-            </div>
-
             <!-- Webflow Link -->
             <div class="card webflow-card">
-                <a href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
+                <a href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">Visit My LinkedIn Profile</a>
                 <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Visit My Webflow Portfolio</a>
             </div>
 
