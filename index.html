@@ -24,15 +24,19 @@
             padding: 20px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 150px;
+            width: 200px;
         }
         .card h3 {
             margin-bottom: 10px;
         }
-        .card a {
+        .card iframe, .card a {
+            width: 100%;
             text-decoration: none;
-            color: #0077b5; /* LinkedIn blue */
+            color: #0077b5;
             font-weight: bold;
+        }
+        .card iframe {
+            border: none;
         }
         .card a:hover {
             color: #005582;
@@ -41,15 +45,26 @@
 </head>
 <body>
     <div class="container">
-        <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="ajcasugod" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a></div>
-              
+        <!-- LinkedIn Profile Badge -->
+        <div class="card">
+            <h3>LinkedIn</h3>
+            <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="ajcasugod" data-version="v1">
+                <a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
+            </div>
+            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        </div>
+
+        <!-- Webflow Preview -->
         <div class="card">
             <h3>Webflow</h3>
+            <iframe src="https://hello-this-is-aj.webflow.io/" title="Webflow Preview" width="300" height="200"></iframe>
             <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Visit Webflow</a>
         </div>
+
+        <!-- Instagram Embed -->
         <div class="card">
             <h3>Instagram</h3>
-            <a href="https://www.instagram.com/ajcasugod/" target="_blank">Visit Instagram</a>
+            <iframe src="https://www.instagram.com/ajcasugod/embed" title="Instagram Feed" width="300" height="400"></iframe>
         </div>
     </div>
 </body>
