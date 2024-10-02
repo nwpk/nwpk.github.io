@@ -35,14 +35,23 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
-        .linkedin-card, .webflow-card {
+        .linkedin-card {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-shadow: none;
+            border: none;
+        }
+        .webflow-card {
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
         .instagram-card iframe {
-            height: 400px;
+            height: 600px;
             border: none;
         }
         .large-card iframe {
@@ -78,10 +87,10 @@
                 order: 2;
             }
             .linkedin-card, .instagram-card {
-                height: 600px;
+                height: auto;
             }
             .instagram-card iframe {
-                height: auto;
+                height: 800px;
             }
         }
         /* Desktop View */
@@ -97,7 +106,7 @@
         <!-- Left Column (LinkedIn, Webflow, Instagram) -->
         <div class="left-column">
             <!-- LinkedIn Profile Badge -->
-            <div class="card linkedin-card">
+            <div class="linkedin-card">
                 <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="ajcasugod" data-version="v1">
                     <a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
                 </div>
@@ -106,6 +115,7 @@
 
             <!-- Webflow Link -->
             <div class="card webflow-card">
+                <a href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
                 <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Visit My Webflow Portfolio</a>
             </div>
 
