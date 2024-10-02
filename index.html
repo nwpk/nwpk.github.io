@@ -50,23 +50,17 @@
             height: 100%;
             border: none;
         }
-        .card h3 {
-            margin: 0;
-            padding: 20px 0;
-            background-color: #f4f4f9;
-            border-bottom: 1px solid #ddd;
-        }
         a {
             display: block;
             padding: 15px;
-            background-color: #0077b5;
+            background-color: #808080;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 20px;
             margin-top: 10px;
         }
         a:hover {
-            background-color: #005582;
+            background-color: #606060;
         }
         /* Mobile View */
         @media (max-width: 768px) {
@@ -76,6 +70,9 @@
             }
             .large-card {
                 order: 2;
+            }
+            .linkedin-card, .instagram-card {
+                height: 600px;
             }
             .instagram-card iframe {
                 height: auto;
@@ -103,20 +100,17 @@
 
             <!-- Webflow Link -->
             <div class="card webflow-card">
-                <h3>My Portfolio</h3>
                 <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Visit My Webflow Portfolio</a>
             </div>
 
             <!-- Instagram Embed -->
             <div class="card instagram-card">
-                <h3>Instagram</h3>
                 <iframe src="https://www.instagram.com/ajcasugod/embed" title="Instagram Feed"></iframe>
             </div>
         </div>
 
         <!-- Right Column (Shopee Finds) -->
         <div class="card large-card">
-            <h3>Featured Shopee Finds</h3>
             <iframe src="https://shpe.site/awesomeproductsnow" title="Featured Shopee Finds"></iframe>
         </div>
     </div>
