@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ's Links</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Lexend', sans-serif; /* Updated font */
             background: url('https://th.bing.com/th/id/OIP.mS4wb1u1teYPBkJ0nHHtpwHaJ3?pid=ImgDet&w=104.74137931034483&h=180&c=7&dpr=1.3') repeat;
             background-size: cover;
             filter: blur(100%); /* Increased blur effect */
@@ -28,12 +28,14 @@
             padding: 20px;
             position: relative; /* Added for positioning of LinkedIn badge */
             z-index: 1; /* Ensures content is above the blurred background */
+            height: 100vh; /* Makes sure the container takes full height */
         }
 
         .left-column {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            height: 100%; /* Ensures full height */
         }
 
         .card {
@@ -63,6 +65,26 @@
             padding: 20px;
         }
 
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Stacks buttons horizontally */
+            margin: 10px;
+        }
+
+        .button-container a {
+            flex: 1; /* Each button takes equal space */
+            margin: 0 5px; /* Space between buttons */
+            padding: 15px;
+            background-color: #d3d3d3; /* Lighter gray */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button-container a:hover {
+            background-color: #a9a9a9; /* Darker gray on hover */
+        }
+
         .instagram-card iframe {
             height: 400px; /* Adjusted height for better balance */
             border: none;
@@ -81,38 +103,40 @@
             border-bottom: 1px solid #ddd;
         }
 
-        a {
-            display: block;
-            padding: 15px;
-            background-color: #808080;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        a:hover {
-            background-color: #606060;
-        }
-
         /* Mobile View */
         @media (max-width: 768px) {
             .container {
-                display: flex;
                 flex-direction: column;
+                height: 100vh; /* Ensures full height for mobile */
+            }
+
+            .left-column {
+                flex-direction: column;
+                width: 100%; /* Ensures full width */
             }
 
             .large-card {
-                order: 2;
-                max-height: 400px; /* Adjusted for mobile */
+                order: 3; /* Shopee card comes at the bottom */
+                width: 100%;
+                height: 50%; /* Occupies bottom half */
+            }
+
+            .button-container {
+                order: 1; /* Button container at the top */
+                margin-bottom: 10px; /* Added space below buttons */
             }
 
             .linkedin-card, .instagram-card {
-                height: auto;
+                height: 50%; /* Each takes half of the upper half */
+                width: 50%; /* Each takes half the width */
             }
 
-            .instagram-card iframe {
-                height: 400px; /* Reduced height for mobile */
+            .linkedin-card {
+                order: 2; /* LinkedIn badge comes after buttons */
+            }
+
+            .instagram-card {
+                order: 2; /* Instagram feed comes after buttons */
             }
         }
 
@@ -121,6 +145,7 @@
             grid-column: 2;
             grid-row: 1 / 4;
             max-height: 100vh;
+            height: auto; /* Allows dynamic height based on window size */
         }
     </style>
 </head>
@@ -128,7 +153,7 @@
     <div class="container">
         <!-- LinkedIn Badge -->
         <div class="linkedin-card">
-            <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="ajcasugod" data-version="v1">
+            <div class="badge-base LI-profile-badge" data-locale="tl_PH" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="ajcasugod" data-version="v1">
                 <a class="badge-base__link LI-simple-link" href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">AJ Casugod</a>
             </div>
         </div>
@@ -137,8 +162,10 @@
         <div class="left-column">
             <!-- Webflow Link -->
             <div class="card webflow-card">
-                <a href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">Visit My LinkedIn Profile</a>
-                <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Visit My Webflow Portfolio</a>
+                <div class="button-container">
+                    <a href="https://ph.linkedin.com/in/ajcasugod?trk=profile-badge">LinkedIn Profile</a>
+                    <a href="https://hello-this-is-aj.webflow.io/" target="_blank">Webflow Portfolio</a>
+                </div>
             </div>
 
             <!-- Instagram Embed -->
